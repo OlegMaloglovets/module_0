@@ -2,17 +2,17 @@ import numpy as np
 
 
 def game_core(number):
-    range_low = 1
-    range_hi = 100
-    predict = (range_hi-range_low)//2
+    range_low = 1  # нижняя граница диапазона поиска
+    range_hi = 100  # верхняя граница диапазона поиска
+    predict = (range_hi-range_low)//2  # число-претендент
     count = 1
     while predict != number:
         count += 1
-        if predict > number:
-            range_hi = predict - 1
+        if predict > number:  # перелет
+            range_hi = predict - 1  # сдвигаем верхнюю границу
         elif predict < number:
-            range_low = predict + 1
-        predict = (range_hi-range_low)//2 + range_low
+            range_low = predict + 1  # сдвигаем нижнюю границу
+        predict = (range_hi-range_low)//2 + range_low  # новое число-претендент
     return(count)  # выход из цикла, если угадали
 
 
