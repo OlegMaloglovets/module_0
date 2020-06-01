@@ -10,7 +10,7 @@ def game_core(number):
         count += 1
         if predict > number:  # перелет
             range_hi = predict - 1  # сдвигаем верхнюю границу
-        elif predict < number:
+        elif predict < number:  # недолет
             range_low = predict + 1  # сдвигаем нижнюю границу
         predict = (range_hi-range_low)//2 + range_low  # новое число-претендент
     return(count)  # выход из цикла, если угадали
