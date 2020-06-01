@@ -5,7 +5,7 @@ def game_core(number):
     range_low = 1  # нижняя граница диапазона поиска
     range_hi = 100  # верхняя граница диапазона поиска
     predict = (range_hi-range_low)//2  # число-претендент
-    count = 1
+    count = 1  # счетчик числа попыток
     while predict != number:
         count += 1
         if predict > number:  # перелет
@@ -13,7 +13,7 @@ def game_core(number):
         elif predict < number:  # недолет
             range_low = predict + 1  # сдвигаем нижнюю границу
         predict = (range_hi-range_low)//2 + range_low  # новое число-претендент
-    return(count)  # выход из цикла, если угадали
+    return(count)  # возврат числа попыток
 
 
 def score_game(game_core):
